@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<style>
+			@html.raw(model.css)
+		</style>
+	</head>
+	<body> 
+		<div class="report">
+			<h1>@model.title</h1>
+			<div>
+				<span class="badge">
+					<span class="badge-label">total files:</span>
+					<span class="badge-value">@model.stats.totalFiles</span>
+				</span>
+				<span class="badge error">
+					<span class="badge-label">files with errors:</span>
+					<span class="badge-value">@model.stats.totalFilesWithErrors / @model.stats.totalFiles</span>
+				</span>
+				<span class="badge warning">
+					<span class="badge-label">files with warnings:</span>
+					<span class="badge-value">@model.stats.totalFilesWithWarnings / @model.stats.totalFiles</span>
+				</span>
+				<span class="badge ok">
+					<span class="badge-label">ok files:</span>
+					<span class="badge-value">@model.stats.totalOkFiles / @model.stats.totalFiles</span>
+				</span>
+				<span class="badge error">
+					<span class="badge-label">total errors:</span>
+					<span class="badge-value">@model.stats.totalErrors</span>
+				</span>
+				<span class="badge warning">
+					<span class="badge-label">total warnings:</span>
+					<span class="badge-value">@model.stats.totalWarnings</span>
+				</span>
+			</div>
+			@model.results.forEach(function(result){
+
+			
+			<div class="card @result.status">
+				
+				<div class="card-header" data-hash="@result.hash">
+					<h2>@result.filename</h2>
+					<em class="fill">in @result.dirname</em>
+					<div>
+						<span class="badge @(result.errorCount > 0 ? 'error' : '')"><span class="badge-value">@result.errorCount</span></span>
+						<span class="badge @(result.warningCount > 0 ? 'warning' : '')"><span class="badge-value">@result.warningCount</span></span>
+					</div>
+				</div>
+				<div class="card-content">
+					<hr>
+					@result.messages.forEach(function(message){
+					<div class="message @(message.severity === 1 ? 'warning' : 'error')">
+						<span class="coords">@message.line:@message.column</span>
+						@message.message
+						@if(message.ruleId){
+						<span class="badge link"><span class="badge-value"><a href="http://eslint.org/docs/rules/@message.ruleId" target="_blank">@message.ruleId</a></span></span>
+						}
+						<br />
+						@if(message.source){
+							var pointer = Array(message.column).join(' ') + '^';
+						<pre>@(message.source + '\r')<span class="pointer">@pointer</span></pre>
+						}
+					</div>
+					})
+				</div>
+			</div>
+			})
+		</div>
+		<script>
+			@html.raw(model.js)
+		</script>
+	</body>
+</html>

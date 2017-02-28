@@ -1,0 +1,180 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Segoe UI', Tahoma, sans-serif
+}
+
+h2 {
+	font-size: 1em;
+	margin: 0;
+	font-weight: 500;
+}
+
+hr {
+	margin: 0 0 10px 0;
+	border: 1px solid #efefef;
+}
+
+.report {
+	margin: 0 auto;
+	width: 80%;
+}
+
+.card {
+	border: 1px solid #efefef;
+	margin: 10px 0;
+	box-shadow: 5px 5px 12px -4px rgba(235,235,235,1);
+}
+
+.fill {
+	flex: 1 1 auto;
+}
+
+.card:hover {
+	border-color: #aaaaaa;
+}
+
+.card.fatal .card-header {
+	background: #d00;
+	color: white;
+}
+
+.card.error .card-header {
+	border-left: 5px solid #d00;
+}
+
+.card.warning .card-header {
+	border-left: 5px solid #f80;
+}
+
+.card.ok .card-header {
+	border-left: 5px solid #0d0;
+}
+
+.card.expanded .card-content {
+	display: block;
+}
+
+.card-header {
+	display: flex;
+	padding: 10px;
+	flex-wrap: nowrap;
+	cursor: pointer;
+}
+pre {
+	margin: 10px 0 0 50px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #666;
+	line-height: 1em;
+	
+}
+
+.pointer {
+	font-weight: bold;
+	color: red;
+}
+
+em {
+	padding-left: 1em;
+	font-style: italic;
+	opacity: .5;
+}
+
+.status {
+	font-size: .8em;
+	font-weight: 500;
+	background: rgba(0, 0, 0, .25);
+	color: white;
+	padding: 3px 6px;
+	border-radius: 5px;
+}
+
+.status.error {
+	background: #d00;
+}
+
+.status.warning {
+	background: #f80;
+}
+
+.message {
+	/*display: flex; 
+	flex-wrap: nowrap;*/
+	margin: 0 0 5px 20px;
+	border-bottom: 1px solid #efefef;
+	line-height: 1.5em;
+}
+
+.message.error .coords {
+	color: #d00;
+	border-left: 5px solid #d00;
+}
+
+.message.warning .coords {
+	color: #f80;
+	border-left: 5px solid #f80;
+}
+
+.message:hover {
+	background: #f8f8f8;
+}
+.no-wrap {
+	white-space: nowrap;
+}
+
+.coords {
+	display: inline-block;
+	min-width: 50px;
+	text-align: center;
+	font-size: .8em;
+	font-weight: 500;
+}
+
+.badge {
+  display: inline-table;
+  background: rgba(0, 0, 0, .25);
+  border-radius: 6px;
+  color: white;
+  font-size: .8em;
+}
+
+.badge .badge-label{
+  display: table-cell;
+  background: #666;
+  line-height: inherit;
+  border-radius: 6px 0 0 6px;
+  padding: 3px 6px;
+  font-weight: 500;
+}
+
+.badge .badge-value {
+  display: table-cell;
+  padding: 3px 6px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.badge.ok {
+	background: #0d0;
+}
+
+.badge.error {
+	background: #d00;
+}
+
+.badge.warning {
+	background: #f80;
+}
+
+.badge.link {
+	background: #bbf;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.card .card-content {
+	display: none;
+}
