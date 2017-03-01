@@ -18,6 +18,18 @@
 					<span class="badge-value">@model.stats.totalErrors</span>
 				</span>
 			</div>
+			<br />
+			<div>
+				<h2>Top 10 failing rules</h2>
+				@model.stats.topRuleFailures.forEach(function(ruleFailure){
+				<a href="https://palantir.github.io/tslint/rules/@ruleFailure.rule" target="_blank">
+					<span class="badge info">
+						<span class="badge-label">@ruleFailure.rule</span>
+						<span class="badge-value">@ruleFailure.errors</span>
+					</span>
+				</a>
+				})
+			</div>
 			@model.results.forEach(function(result){
 			<div class="card error">
 				<div class="card-header" data-hash="@result.hash">
