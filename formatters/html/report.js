@@ -1,3 +1,4 @@
+/* eslint-env browser */
 (function(window){
 	'use strict';
 	

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<style>
+			@html.raw(model.css)
+		</style>
+	</head>
+	<body> 
+		<div class="report">
+			<h1>TSLint report</h1>
+			<div>
+				<span class="badge error">
+					<span class="badge-label">files with errors:</span>
+					<span class="badge-value">@model.stats.totalFilesWithErrors</span>
+				</span>
+				<span class="badge error">
+					<span class="badge-label">total errors:</span>
+					<span class="badge-value">@model.stats.totalErrors</span>
+				</span>
+			</div>
+			@model.results.forEach(function(result){
+			<div class="card error">
+				<div class="card-header" data-hash="@result.hash">
+					<h2>@result.fileName</h2>
+					<em class="fill">in @result.dirName</em>
+					<div>
+						<span class="badge error"><span class="badge-value">@result.errorCount</span></span>
+					</div>
+				</div>
+				<div class="card-content">
+					<hr>
+					@result.errors.forEach(function(message){
+					<div class="message error">
+						<span class="coords">@message.start.line:@message.start.column</span>
+						@message.message
+						@if(message.ruleId){
+						<span class="badge link"><span class="badge-value"><a href="https://palantir.github.io/tslint/rules/@message.ruleId" target="_blank">@message.ruleId</a></span></span>
+						}
+						<br />
+						@if(message.source){
+							var pointer = Array(message.start.column + 1).join(' ') + '^';
+						<pre>@(message.source + '\r')<span class="pointer">@pointer</span></pre>
+						}
+					</div>
+					})
+				</div>
+			</div>
+			})
+		</div>
+		<script>
+			@html.raw(model.js)
+		</script>
+	</body>
+</html>
