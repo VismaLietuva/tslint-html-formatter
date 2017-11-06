@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "HTML formatter for tslint",
   "repository": "ramunsk/tslint-formatter-html",
+  "main": "index.js",
   "scripts": {
     "test": "mocha './specs/**/*.specs.js'",
     "test:watch": "npm test -- -w --recursive --watch-extensions js"
