@@ -6,7 +6,7 @@ HTML formatter for TSLint.
 ## Installation
 **NPM CLI**
 ```
-npm install VismaLietuva/tslint-html-formatter --save-dev
+npm install @vismalietuva/tslint-formatter-html --save-dev
 ```
 
 **Yarn CLI**
