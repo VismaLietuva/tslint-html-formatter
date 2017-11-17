@@ -1,5 +1,5 @@
 {
-  "name": "tslint-formatter-html",
+  "name": "@vismalietuva/tslint-formatter-html",
   "version": "1.0.0",
   "description": "HTML formatter for tslint",
   "repository": "ramunsk/tslint-formatter-html",
