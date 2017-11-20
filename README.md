@@ -11,7 +11,7 @@ npm install @vismalietuva/tslint-formatter-html --save-dev
 
 **Yarn CLI**
 ```
-yarn add VismaLietuva/tslint-html-formatter --dev
+yarn add @vismalietuva/tslint-formatter-html --dev
 ```
 
 ## Usage
