@@ -17,7 +17,7 @@ yarn add @vismalietuva/tslint-formatter-html --dev
 ## Usage
 **TSLint CLI**
 ```
-tslint --project tsconfig.json --formatters-dir node_modules/@vismalietuva//tslint-formatter-html/formatters --format html --out  tslint.html
+tslint --project tsconfig.json --formatters-dir node_modules/@vismalietuva/tslint-formatter-html/formatters --format html --out  tslint.html
 ```
 
 **Angular CLI**
