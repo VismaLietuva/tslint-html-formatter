@@ -22,5 +22,5 @@ tslint --project tsconfig.json --formatters-dir node_modules/@vismalietuva/tslin
 
 **Angular CLI**
 ```
-ng lint --format tslint-formatter-html > tslint.html
+ng lint --format @vismalietuva/tslint-formatter-html > tslint.html
 ```
